@@ -1,0 +1,17 @@
+services:
+  bff.webapi:
+    build:
+      context: D:\Fuentes\React\react-bff-aspnet\Bff.Webapi
+      dockerfile: Bff.Webapi/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORTS: '8081'
+      ASPNETCORE_HTTP_PORTS: '8080'
+    image: bffwebapi
+    ports:
+    - target: 8080
+    - target: 8081
+    volumes:
+    - C:\Users\iosmany\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+    - C:\Users\iosmany\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+version: '3.4'
